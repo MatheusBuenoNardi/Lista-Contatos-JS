@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/imagens/favicon.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<title>Gerenciador de Contatos</title>
+</head>
+
+<body class="p-3 mb-2 bg-light text-dark">
+	<header>
+		<h1 class="d-flex justify-content-center mb-4 mt-4">Gerenciador de Contatos </h1>
+	</header>
+	<main>
+		<div class="container">
+			<div class="row mb-2">
+				<form id="app-form">
+					<div class="alert visually-hidden alert-dismissible fade show" id="mensagem" role="alert"></div>
+					<div class="text-center">
+						<div class="mb-3">
+							<input class="form-control" id="pessoaNome" placeholder="Nome" />
+						</div>
+						<div class="mb-3">
+							<input class="form-control" id="pessoaSobrenome" placeholder="Sobrenome" />
+						</div>
+						<div class="mb-3">
+							<input class="form-control" type="number" id="pessoaTelefone" placeholder="Telefone" />
+						</div>
+						<button class="btn-app btn btn-primary mb-3 " id="btnCadastrar" type="submit">Cadastrar</button>
+						<button class="btn-app btn btn-primary mb-3 " id="btnEditar" type="button"
+							style="display: none;">Editar</button>
+						<button class="btn-app" id="btnFavoritar" type="button" style="display: none;">Favorito</button>
+						<button class="btn-app" id="btnRemover" type="button" style="display: none;">Remover</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="row d-flex justify-content-center">
+				<div class="col-11">
+					<label for="campoPesquisa" class="visually-hidden">Pesquisar</label>
+					<input type="text" class="form-control" id="campoPesquisa" placeholder="Pesquisar">
+				</div>
+				<div class="col-1 d-flex flex-row-reverse">
+					<button type="submit" id="btnpesquisa" onclick="pesquisarContato()"
+						class="bd-highlight btn btn-primary mb-3"><i
+							class="bi-search bi justify-content-center"></i></button>
+							&nbsp;
+					<button type="submit" id="btnpesquisa" onclick="limparPesquisa()"
+						class="bd-highlight btn btn-warning mb-3"><i
+							class="bi-x-circle bi justify-content-center"></i></button>
+				</div>
+			</div>
+			<div class="form-check mb-3">
+				<input class="form-check-input" type="checkbox" value="" id="botaoFavoritos">
+				<label class="form-check-label" for="botaoFavoritos">
+					Exibir Favorito
+				</label>
+			</div>
+
+			<div>
+				<div>
+					<ul class="list-group" id="listaPessoas"></ul>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="assets/site.js"></script>
+
+</body>
+
+</html>
